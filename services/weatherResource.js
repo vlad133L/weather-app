@@ -1,11 +1,25 @@
+import {citiesCoords} from '../constants.js';
+
 export class WeatherResource{
-	async get(latitude,longitude){
+	constructor(baseUrl){
+		this.baseUrl = baseUrl;
+	}
+	
+	async get(){
+		 const selectedCity = document.querySelector('.weather__select').value;
+		 const selectedCityCoords = citiesCoords[selectedCity];
 	  try{
-		 const response = await fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${latitude}&lon=${longitude}`);
+		 const response = await fetch(`${this.baseUrl}/api/current?lat=${selectedCityCoords.latitude}&lon=${selectedCityCoords.longitude}`);
 		 const data = await response.json();
-		 return data;
+		 return {
+			'country' : data.sys.country,
+			'city' : data.name,
+			'temperature' : data.main.temp,
+			'description' : data.weather[0].main
+		 };
 	  }catch(err){
 		 console.error(err);
 	  }
 	}
  }
+

@@ -1,5 +1,5 @@
 body {
-  color: white;
+  color: #ffffff;
   margin-top: 20px;
   background-color: rgb(143, 124, 124);
 }
@@ -46,7 +46,7 @@ body {
   width: 150px;
   padding: 10px;
   background-color: #4d5061;
-  color: white;
+  color: #ffffff;
 }
 
 .weather__arrow {
@@ -68,13 +68,13 @@ body {
   top: 50%;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid rgba(255, 255, 255, 0.5);
+  border-top: 10px solid rgba(255, 255, 255, 0.502);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
 .weather__button {
-  background-color: rgb(77, 80, 97);
+  background-color: #4d5061;
   width: 150px;
   border-radius: 6px;
   padding: 10px;
@@ -89,7 +89,7 @@ body {
           align-items: center;
   text-align: center;
   font-size: 1.3em;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
@@ -98,6 +98,7 @@ body {
 }
 
 .weather__info {
+  font-size: 20px;
   width: 300px;
   padding: 20px 0;
   display: -webkit-box;
@@ -121,19 +122,11 @@ body {
 }
 
 .weather__info-country {
-  font-size: 25px;
+  font-size: 1.25em;
 }
 
 .weather__info-city {
-  font-size: 22px;
-}
-
-.weather__info-temperature {
-  font-size: 20px;
-}
-
-.weather__info-description {
-  font-size: 20px;
+  font-size: 1.1em;
 }
 
 .weather__info-image {

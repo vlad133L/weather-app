@@ -1,31 +1,47 @@
+import { weatherDescriptionEnum } from "../constants.js";
+
 export class WeatherService{
-	selectCity(){
-		return document.querySelector('.weather__select').value;
+	changeTextContent(selector, text){ 
+		document.querySelector(selector).textContent = text; 
 	}
+
 	showCountry(country){
-	  document.querySelector('.weather__info-country').textContent = `Country: ${country}`;
+		const INFO_COUNTRY_SELECTOR = '.weather__info-country';
+		const textContent = `Country: ${country}`;
+		this.changeTextContent(INFO_COUNTRY_SELECTOR,textContent)
 	}
+
 	showCity(city){
-	  document.querySelector('.weather__info-city').textContent = `City: ${city}`;
+		const INFO_CITY_SELECTOR = '.weather__info-city';
+		const textContent = `City: ${city}`;
+		this.changeTextContent(INFO_CITY_SELECTOR,textContent)
 	}
+
 	showTemperature(temperature){
-	  document.querySelector('.weather__info-temperature').textContent = `Temperature: ${temperature} °C`;
+		const INFO_TEMPERATURE_SELECTOR = '.weather__info-temperature';
+		const textContent = `Temperature: ${temperature} °C`;
+		this.changeTextContent(INFO_TEMPERATURE_SELECTOR,textContent);
+		
 	}
+
 	showDescription(description){
-	  document.querySelector('.weather__info-description').textContent = description;
-	  const descriptionImage = document.querySelector('.weather__info-image');
+		const INFO_DESCRIPTION_SELECTOR = '.weather__info-description';
+		const textContent = description;
+		const INFO_DESCRIPTION_IMAGE = document.querySelector('.weather__info-image')
+		this.changeTextContent(INFO_DESCRIPTION_SELECTOR,textContent);
 
 	//   Картинка погоды
 	  switch(description){
-		case 'Clouds':
-			descriptionImage.src = './images/cloud.png';
+		case weatherDescriptionEnum.CLOUDS:
+			INFO_DESCRIPTION_IMAGE.src = './images/cloud.png';
 			break;
-		case 'Rain':
-			descriptionImage.src = './images/rain.png';
+		case weatherDescriptionEnum.RAIN:
+			INFO_DESCRIPTION_IMAGE.src = './images/rain.png';
 			break;
-		case 'Clear':
-			descriptionImage.src = './images/clear-sky.png';
+		case weatherDescriptionEnum.CLEAR:
+			INFO_DESCRIPTION_IMAGE.src = './images/clear-sky.png';
 			break;
 	  }
 	}
 }
+

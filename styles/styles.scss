@@ -1,6 +1,10 @@
+$white : #ffffff;
+$bg-color : #4d5061;
+$main-size: 20px;
+
 body {
-	color: white;
-	margin-top: 20px;
+	color: $white;
+	margin-top:$main-size;
 	background-color: rgba(143, 124, 124, 1);
 	}
 	.weather__form{
@@ -24,11 +28,11 @@ body {
 	}
 	&__select{
 		box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-		font-size: 18px;
+		font-size: 0.9*$main-size;
 		width: 150px;
 		padding: 10px;
-		background-color: #4d5061;
-		color: white;
+		background-color: $bg-color;
+		color: $white;
 	}
 }
 .weather__arrow{
@@ -36,7 +40,7 @@ body {
 	top: 0;
 	left: 116px;
 	display: block;
-	background-color:#4d5061;
+	background-color:$bg-color;
 	height: 100%;
 	width: 30px;
 	pointer-events: none;
@@ -50,12 +54,12 @@ body {
 		top: 50%;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
-		border-top: 10px solid rgba(255,255,255,.5);
+		border-top: 10px solid rgba($white, 0.502);
 		transform: translate(-50%,-50%);
 	}
 }
 .weather__button{
-	background-color:rgb(77, 80, 97);
+	background-color:$bg-color;
 	width: 150px;
 	border-radius: 6px;
 	padding: 10px;
@@ -64,7 +68,7 @@ body {
 	align-items: center;
 	text-align: center;
 	font-size: 1.3em;
-	color: rgb(255, 255, 255);
+	color: $white;
 	transition: background-color 0.2s ease;
 	&:hover{
 		background-color:rgb(62, 61, 61);
@@ -72,29 +76,24 @@ body {
 }
 
 .weather__info {
+	font-size: $main-size;
 	width: 300px;
-	padding: 20px 0;
+	padding: $main-size 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: #4d5061;
+	background-color:$bg-color;
 	border-radius: 8px;
 	&>*:not(:last-child){
-		margin-bottom: 20px;
+		margin-bottom: $main-size;
 	}
 }
 .weather__info-country {
-	font-size: 25px;
+	font-size: 1.25em;
 }
 .weather__info-city {
-	font-size: 22px;
-}
-.weather__info-temperature {
-	font-size: 20px;
-}
-.weather__info-description {
-	font-size: 20px;
+	font-size: 1.1em;
 }
 
 .weather__info-image{
