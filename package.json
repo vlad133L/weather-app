@@ -1,23 +1,24 @@
 {
-  "name": "weatherapp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vlad133L/weather-app.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vlad133L/weather-app/issues"
-  },
-  "homepage": "https://github.com/vlad133L/weather-app#readme",
-  "dependencies": {
-    "nodemon": "^2.0.20",
-    "query-string": "^7.1.3"
-  }
+	"name": "weatherapp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vlad133L/weather-app.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vlad133L/weather-app/issues"
+	},
+	"homepage": "https://github.com/vlad133L/weather-app#readme",
+	"dependencies": {
+		"nodemon": "^2.0.20",
+		"query-string": "^7.1.3"
+	}
 }
