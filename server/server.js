@@ -24,20 +24,20 @@ app.get('/', handleRequest);
 
 async function handleRequest(req, res) {
 	const collection = req.app.locals.collection;
+	const { lat, lon } = req.query;
 	const requestService = new RequestService();
+	const coord = {
+		lon: Number(lon),
+		lat: Number(lat),
+	};
 	try {
-		const { lat, lon } = req.query;
-		const coord = {
-			lon: Number(lon),
-			lat: Number(lat),
-		};
+		const response = await requestService.getData(lat, lon);
 		// Получаем объект города из бд, если он там есть
 		const cityWeatherInfo = await collection.findOne({
 			coord,
 		});
 		//Если города в бд нет, то делаем запрос к API
 		if (!cityWeatherInfo) {
-			const response = await requestService.getData(lat, lon);
 			//Использовал свою широту и долготу из client/constants.js, т.к немного отличались от API
 			console.log('added to mongo' + ' ' + new Date());
 			await collection.insertOne({
@@ -51,7 +51,6 @@ async function handleRequest(req, res) {
 			// Запрос к API за новыми данными
 			if (timeDifference(cityWeatherInfo.requestDate) > 1) {
 				console.log('More than 1 minute' + ' ' + new Date());
-				const response = await requestService.getData(lat, lon);
 				await collection.findOneAndUpdate(
 					{
 						coord,
