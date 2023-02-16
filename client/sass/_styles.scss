@@ -1,0 +1,108 @@
+body {
+	color: $white;
+	margin-top: $main-size;
+	background-color: rgba(143, 124, 124, 1);
+}
+
+.weather__form {
+	width: 300px;
+	border-radius: 8px;
+	padding-top: 40px;
+	height: 250px;
+	background-color: $form-bg;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 100px;
+}
+
+.weather {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	&__custom-select {
+		position: relative;
+		margin-bottom: 70px;
+	}
+
+	&__select {
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+		font-size: 0.9*$main-size;
+		width: 150px;
+		padding: 10px;
+		background-color: $select-bg;
+		color: $white;
+	}
+}
+
+.weather__arrow {
+	position: absolute;
+	top: 0;
+	left: 116px;
+	display: block;
+	background-color: $select-bg;
+	height: 100%;
+	width: 30px;
+	pointer-events: none;
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 50%;
+		top: 50%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid rgba($white, 0.502);
+		transform: translate(-50%, -50%);
+	}
+}
+
+.weather__button {
+	background-color: $select-bg;
+	width: 150px;
+	border-radius: 6px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 1.3em;
+	color: $white;
+	transition: background-color 0.2s ease;
+
+	&:hover {
+		background-color: rgb(62, 61, 61);
+	}
+}
+
+.weather__info {
+	font-size: $main-size;
+	width: 300px;
+	padding: $main-size 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: $select-bg;
+	border-radius: 8px;
+
+	&>*:not(:last-child) {
+		margin-bottom: $main-size;
+	}
+}
+
+.weather__info-country {
+	font-size: 1.25em;
+}
+
+.weather__info-city {
+	font-size: 1.1em;
+}
+
+.weather__info-image {
+	width: 50px;
+	height: 50px;
+}

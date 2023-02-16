@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>Weather-App</title>
+	<link rel="stylesheet"
+		href="./css/main.css">
+</head>
+
+<body>
+	<div class="weather">
+		<form class="weather__form">
+			<div class="weather__custom-select">
+				<select class="weather__select">
+					<option value="Minsk">Minsk</option>
+					<option value="Lviv">Lviv</option>
+					<option value="Moscow">Moscow</option>
+					<option value="Riga">Riga</option>
+					<option value="Warsaw">Warsaw</option>
+				</select>
+				<span class="weather__arrow"></span>
+			</div>
+			<button class="weather__button"
+				type="submit">Узнать погоду</button>
+		</form>
+		<div class="weather__info">
+			<p class="weather__info-country"></p>
+			<p class="weather__info-city"></p>
+			<p class="weather__info-temperature"></p>
+			<p class="weather__info-description"></p>
+			<img class="weather__info-image"
+				src="./images/gray-bg.png">
+		</div>
+	</div>
+	<script src="index.js"
+		type="module"></script>
+</body>
+
+</html>
