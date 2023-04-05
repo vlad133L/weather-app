@@ -6,15 +6,15 @@ const cityEnum = {
 	WARSAW: 'Warsaw',
 };
 export const citiesCoords = {
-	[cityEnum.MINSK]: { latitude: 53.893009, longitude: 27.567444 },
-	[cityEnum.MOSCOW]: { latitude: 55.751244, longitude: 37.618423 },
+	[cityEnum.MINSK]: { latitude: 53.893, longitude: 27.5674 },
+	[cityEnum.MOSCOW]: { latitude: 37.6184, longitude: 37.6184 },
 	[cityEnum.LVIV]: { latitude: 49.842, longitude: 24.0311 },
-	[cityEnum.RIGA]: { latitude: 56.966662, longitude: 24.106422 },
-	[cityEnum.WARSAW]: { latitude: 52.237049, longitude: 21.017532 },
+	[cityEnum.RIGA]: { latitude: 56.9667, longitude: 24.1064 },
+	[cityEnum.WARSAW]: { latitude: 52.237, longitude: 21.0175 },
 };
 export const weatherDescriptionEnum = {
 	CLOUDS: 'Clouds',
 	RAIN: 'Rain',
 	CLEAR: 'Clear',
 };
-export const baseUrl = 'http://localhost:5000';
+export const baseUrl = 'http://localhost:5000/api/weather/';
