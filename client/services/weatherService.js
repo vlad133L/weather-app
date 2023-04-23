@@ -32,6 +32,8 @@ export class WeatherService {
       case weatherDescriptionEnum.CLEAR:
         INFO_DESCRIPTION_IMAGE.src = './images/clear-sky.png';
         break;
+      default:
+        break;
     }
   }
 }

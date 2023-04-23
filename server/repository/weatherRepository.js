@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import Weather from '../models/weather.js';
 
 export class WeatherRepository {

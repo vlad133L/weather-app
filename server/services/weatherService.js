@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import { WeatherRepository } from '../repository/weatherRepository.js';
 import { WeatherResource } from '../resources/weatherResource.js';
 import getTimeDifference from '../utils/getTimeDifference.js';
