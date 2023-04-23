@@ -1,12 +1,9 @@
+import { WEATHER_API_URL } from '../constants.js';
+
 export class WeatherResource {
+  // eslint-disable-next-line class-methods-use-this
   async get(lon, lat) {
-    try {
-      const response = await fetch(
-        `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${lon}`
-      );
-      return response.json();
-    } catch (err) {
-      console.log(err);
-    }
+    const response = await fetch(`${WEATHER_API_URL}?lat=${lat}&lon=${lon}`);
+    return response.json();
   }
 }

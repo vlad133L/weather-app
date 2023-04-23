@@ -2,8 +2,8 @@
 import Weather from '../models/weather.js';
 
 export class WeatherRepository {
-  async create(response) {
-    const weatherData = new Weather(response);
+  async create(weatherPayload) {
+    const weatherData = new Weather(weatherPayload);
     weatherData.save();
   }
 
@@ -12,7 +12,7 @@ export class WeatherRepository {
     return weatherData;
   }
 
-  async update(lon, lat, response) {
+  async update(lon, lat, weatherPayload) {
     await Weather.findOneAndUpdate(
       {
         lon,
@@ -20,7 +20,7 @@ export class WeatherRepository {
       },
       {
         $set: {
-          ...response,
+          ...weatherPayload,
         },
       }
     );

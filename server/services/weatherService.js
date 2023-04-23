@@ -3,14 +3,14 @@ import { WeatherRepository } from '../repository/weatherRepository.js';
 import { WeatherResource } from '../resources/weatherResource.js';
 import getTimeDifference from '../utils/getTimeDifference.js';
 
-export class WeatherService {
+class WeatherService {
   async get(lon, lat) {
     try {
       const weatherResource = new WeatherResource();
       const weatherRepository = new WeatherRepository();
       // console.log('1. GETTING WEATHER DATA');
-      const weatherData = await weatherRepository.get(lon, lat);
-      if (!weatherData) {
+      const weatherDataDB = await weatherRepository.get(lon, lat);
+      if (!weatherDataDB) {
         // console.log('2. IF WEATHER DATA DOES NOT EXIST IN DB');
         // console.log('NO DATA IN DB');
         const response = await weatherResource.get(lon, lat);
@@ -18,16 +18,17 @@ export class WeatherService {
         return response;
       }
       // console.log('3. IF WEATHER DATA EXISTS IN DB');
-      if (getTimeDifference(weatherData.updatedAt) > 2) {
+      if (getTimeDifference(weatherDataDB.updatedAt) > 2) {
         // console.log('2 MIN HAVE PASSED');
         const response = await weatherResource.get(lon, lat);
         await weatherRepository.update(lon, lat, response);
         return response;
       }
       // console.log('2 MIN HAVE NOT PASSED');
-      return weatherData;
+      return weatherDataDB;
     } catch (err) {
       console.log(err);
     }
   }
 }
+export default new WeatherService();
